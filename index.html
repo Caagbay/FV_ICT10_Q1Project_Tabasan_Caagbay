@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+
+    <title>Flower Shop</title>
+
+    <style>
+
+        body {
+            background-image: url('https://i.pinimg.com/736x/97/36/08/97360800f20472784dc16ca079e9d832.jpg');
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+            'Lucida Grande', Arial, sans-serif;
+
+            margin: 0;
+            padding: 25px;
+        }
+
+
+      
+
+        .container {
+            background-color: #ecffecc0;
+
+            width: 600px;
+
+            margin: auto;
+
+            padding: 35px;
+
+            box-shadow: 0px 8px 20px #5c4321a8;
+        }
+
+
+      
+
+        .decoration {
+            text-align: center;
+
+            font-size: 25px;
+
+            margin-bottom: 5px;
+
+            color: #9b625b;
+        }
+
+
+     
+
+        h1 {
+            text-align: center;
+
+            color: #65453c;
+
+            font-size: 29px;
+
+            font-family: 'Trebuchet MS',
+            'Lucida Sans Unicode',
+            'Lucida Grande',
+            Arial,
+            sans-serif;
+
+            margin-top: 10px;
+
+            margin-bottom: 25px;
+        }
+
+
+     
+
+        h3 {
+            color: #795548;
+
+            font-size: 22px;
+
+            margin-bottom: 12px;
+        }
+
+
+       
+
+        .menu {
+        background-color: #ffc0c09c;
+        padding: 18px;
+    
+        border-radius: 15px;
+      
+        
+}   
+
+
+      
+
+        .flower {
+            margin: 13px;
+
+            font-size: 18px;
+
+            color: #65453c;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+        }
+
+
+       
+
+        .flower img {
+            width: 55px;
+
+            height: 55px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+           
+        }
+
+
+       
+
+        input[type="checkbox"] {
+            width: 18px;
+
+            height: 18px;
+
+            accent-color: #a96d69;
+        }
+
+
+      
+
+        button {
+            display: block;
+
+            margin: 25px auto;
+
+            padding: 12px 35px;
+
+            border-radius: 15px;
+
+            border: 2px solid #9b625b;
+
+            background-color: #a96d69;
+
+            color: #fff8f2;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+
+        button:hover {
+            background-color: #80504c;
+        }
+
+
+      
+
+        .receipt {
+        margin-top: 25px;
+
+        padding: 25px;
+
+       background-color: #ffc0c09c;
+
+        border-radius: 15px;
+
+        
+
+        position: relative;
+
+        min-height: 190px;
+}
+
+
+       
+
+        .receipt h2 {
+            text-align: center;
+
+            color: #795548;
+
+            font-family: 'Trebuchet MS',
+            'Lucida Sans Unicode',
+            'Lucida Grande',
+            Arial,
+            sans-serif;
+
+            margin-top: 5px;
+
+            margin-bottom: 30px;
+        }
+
+
+    
+
+        .receipt p {
+            font-size: 18px;
+
+            color: #65453c;
+
+            margin: 15px 5px;
+        }
+
+
+  
+
+        #total {
+            font-size: 22px;
+
+            font-weight: bold;
+
+            color: #6d4540;
+
+           
+        }
+
+
+     
+
+        .receipt-decoration {
+            position: absolute;
+
+            color: #a96d69;
+
+            font-size: 23px;
+        }
+
+
+        .top-left {
+            top: 10px;
+
+            left: 12px;
+        }
+
+
+        .top-right {
+            top: 10px;
+
+            right: 12px;
+        }
+
+
+        .bottom-left {
+            bottom: 8px;
+
+            left: 12px;
+        }
+
+
+        .bottom-right {
+            bottom: 8px;
+
+            right: 12px;
+        }
+
+
+   
+
+        .footer {
+            text-align: center;
+
+            margin-top: 20px;
+
+            color: #65453c;
+
+            font-size: 16px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="container">
+
+
+      
+
+        <div class="decoration">
+
+            ♡𖦹・✿
+        </div>
+
+
+       
+
+        <h1>
+
+            OBMC Entrep Fair Group 2 -
+            Flower Shop ♡
+
+        </h1>
+
+
+
+        <h3>
+
+            Menu:
+
+        </h3>
+
+
+        <div class="menu">
+
+
+
+            <div class="flower">
+
+                <input type="checkbox" id="rose">
+
+                <img
+                    src="https://i.pinimg.com/736x/9e/a6/eb/9ea6eb4acb204b50af09dc4be537aca1.jpg"
+                >
+
+                <label>
+
+                    Rose Bouquet - ₱150
+
+                </label>
+
+            </div>
+
+
+           
+            <div class="flower">
+
+                <input type="checkbox" id="tulip">
+
+                <img
+                    src="https://i.pinimg.com/1200x/61/dd/9b/61dd9ba711f5b980ecb3c0eaeb9384a1.jpg"
+                >
+
+                <label>
+
+                    Tulip Bouquet - ₱180
+
+                </label>
+
+            </div>
+
+
+          
+
+            <div class="flower">
+
+                <input type="checkbox" id="sunflower">
+
+                <img
+                    src= "https://i.pinimg.com/736x/21/a7/18/21a718f6a22324677ad992146e62ca5a.jpg"
+                >
+
+                <label>
+
+                    Sunflower Bouquet - ₱200
+
+                </label>
+
+            </div>
+
+
+          
+
+            <div class="flower">
+
+                <input type="checkbox" id="lavender">
+
+                <img
+                    src="https://i.pinimg.com/736x/d8/6e/9a/d86e9a7ea0390533c1805ac6e666588f.jpg"
+                >
+
+                <label>
+
+                    Lavender Bouquet - ₱170
+
+                </label>
+
+            </div>
+
+
+
+            <div class="flower">
+
+                <input type="checkbox" id="mixed">
+
+                <img
+                    src= "https://i.pinimg.com/736x/b6/f2/d1/b6f2d1c40d618f1b2c65b5ed74d9bf54.jpg"
+                >
+
+                <label>
+
+                    Mixed Flower Bouquet - ₱250
+
+                </label>
+
+            </div>
+
+
+        </div>
+
+
+     
+        <button py-click="create_order">
+
+            𖦹 Create Order ♡
+
+        </button>
+
+
+       
+
+        <div class="receipt">
+
+
+            <div class="receipt-decoration top-left">
+
+                ✿⁠
+
+            </div>
+
+
+            <div class="receipt-decoration top-right">
+
+                ✿⁠
+
+            </div>
+
+
+            <h2>
+
+                ✦ ── Receipt ── ✦
+
+            </h2>
+
+
+            <p id="subtotal"></p>
+
+            <p id="tax"></p>
+
+            <p id="total"></p>
+
+
+            <div class="receipt-decoration bottom-left">
+
+                ✿⁠
+
+            </div>
+
+
+            <div class="receipt-decoration bottom-right">
+
+                ✿⁠
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="footer">
+
+            Thank you for visiting! 🌷
+            ( ⸝⸝´ ᵕ `⸝⸝)
+
+        </div>
+
+
+    </div>
+
+
+  
+
+    <py-script src="main.py"></py-script>
+
+
+</body>
+
+</html>
