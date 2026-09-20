@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+
+    <title>SKU Generator</title>
+
+    <style>
+
+        body {
+            background-image: url('https://media.discordapp.net/attachments/1272862527491018796/1551128980126441532/IMG_8048.jpg?ex=6ab0d8ef&is=6aaf876f&hm=b515428ac03cb3fefbf34a2f95cbc416e422a2e123757b742513773a18689f38&=&format=webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+            'Lucida Grande', Arial, sans-serif;
+            margin: 0;
+            padding: 25px;
+        }
+        .container {
+            background-color: #fff0f0c7;
+            width: 600px;
+            margin: auto;
+            padding: 35px;
+            box-shadow: 0px 8px 20px #704858a8;
+            border-radius: 20px;
+        }
+
+        .decoration {
+            text-align: center;
+            font-size: 25px;
+            margin-bottom: 5px;
+            color: #a96d7e;
+        }
+
+        .navigationthing {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #704858;
+        }
+
+        .navigationthing a:hover {
+            color: #a96d7e;
+        }
+
+        h1 {
+            text-align: center;
+            color: #704858;
+            font-size: 30px;
+            font-family: 'Trebuchet MS'
+        }
+
+        h3 {
+            color: #87576d;
+            font-size: 20px;
+        }
+
+        .form {
+            background-color: #f8dce3b8;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .inputstuff {
+            margin: 15px;
+        }
+
+        .inputstuff label {
+            display: block;
+            margin-bottom: 8px;
+            color: #704858;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px;
+            border-radius: 10px;
+            border: 2px solid #c493a4;
+            background-color: #fffafa;
+            color: #704858;
+            font-size: 16px;
+            font-family: 'Trebuchet MS',
+        }
+
+
+        button {
+            display: block;
+            margin: 25px auto;
+            padding: 12px 35px;
+            border-radius: 15px;
+            border: 2px solid #9b6074;
+            background-color: #a96d7e;
+            color: #fff8f2;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #805064;
+        }
+
+        .result {
+            margin-top: 25px;
+            padding: 25px;
+            background-color: #f8dce3b8;
+            border-radius: 15px;
+            position: relative;
+            min-height: 150px;
+        }
+
+        .result h2 {
+            text-align: center;
+            color: #795466;
+            font-family: 'Trebuchet MS',
+            margin-top: 5px;
+            margin-bottom: 25px;
+        }
+
+        #sku {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #8f536a;
+            letter-spacing: 3px;
+        }
+
+        #details {
+            text-align: center;
+            font-size: 16px;
+            color: #704858;
+        }
+
+        .thankyou {
+            text-align: center;
+            margin-top: 20px;
+            color: #704858;
+            font-size: 16px;
+        }
+        
+        .navigationthing {
+        text-align: center;
+        margin-top: 25px;
+        padding: 15px;
+        background-color: #f8dce3b8;
+        border-radius: 15px;
+        border: 2px solid #c493a4;
+        }
+
+        .navigationthing a {
+        color: #704858;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 0 15px;
+        }
+        .navigationthing a:hover {
+        color: #a96d7e;
+        text-decoration: underline;
+        }
+        .decoration{
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="decoration">
+            ♡𖦹・✿
+        </div>
+
+
+
+        <h1>
+            OBMC Entrep Fair -
+            <br>
+            SKU Bouquet Generator ♡
+        </h1>
+        <h3>
+            Product Information:
+        </h3>
+        <div class="form">
+            <div class="inputstuff">
+                <label>
+                    🌷 Product Category:
+                </label>
+                <select id="flowertype">
+                    <option value="RS">
+                        Rose Bouquet
+                    </option>
+                    <option value="TL">
+                        Tulip Bouquet
+                    </option>
+                    <option value="SN">
+                        Sunflower Bouquet
+                    </option>
+                    <option value="LV">
+                        Lavender Bouquet
+                    </option>
+                    <option value="MF">
+                        Mixed Flower Bouquet
+                    </option>
+                </select>
+            </div>
+            <div class="inputstuff">
+                <label>
+                    🌸 Product Name:
+                </label>
+                <input
+                    type="text"
+                    id="bouquets"
+                    placeholder="e.g. Rose Bouquet"
+                >
+            </div>
+
+            <div class="inputstuff">
+                <label>
+                    🌻 Stock Quantity:
+                </label>
+                <input
+                    type="number"
+                    id="quantity"
+                    min="0"
+                    max="999"
+                    placeholder="e.g. 25"
+                >
+            </div>
+        </div>
+
+        <button py-click="skumaker">
+            𖦹 Generate SKU ♡
+        </button>
+        <div class="result">
+
+            <h2>
+                ✦ ── Generated SKU ── ✦
+            </h2>
+
+            <p id="sku">
+                Your SKU will appear here.
+            </p>
+
+            <p id="details">
+                Enter the product information above.
+            </p>
+
+        </div>
+        <div class="thankyou">
+            Thank you! 🌷
+            ( ⸝⸝´ ᵕ `⸝⸝)
+        </div>
+
+        <div class="navigationthing">
+    <a href="index.html">
+        Receipt Generator
+    </a>
+    |
+    <a href="sku.html">
+        SKU Generator
+    </a>
+</div>
+    </div>
+    <py-script src="sku.py"></py-script>
+</body>
+
+</html>
